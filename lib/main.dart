@@ -4,6 +4,7 @@ import './widgets/gameplay.dart';
 import 'package:provider/provider.dart';
 import './widgets/dice.dart';
 import './gameengine/model/dice_model.dart';
+import 'ludo_ui/home.dart';
 
 void main() => runApp(MyApp());
 
@@ -37,20 +38,18 @@ class _MyHomePageState extends State<MyHomePage> {
   @override
   Widget build(BuildContext context) {
     final gameState = Provider.of<GameState>(context);
-    return Scaffold(
-      appBar: AppBar(
-        key: keyBar,
-        title: Text('Ludo'),
-      ),
-      body: GamePlay(keyBar, gameState),
-      bottomNavigationBar: BottomAppBar(
-        shape: const CircularNotchedRectangle(),
-        child: Container(
-          height: 50.0,
-        ),
-      ),
-      floatingActionButton: Dice(),
-      floatingActionButtonLocation: FloatingActionButtonLocation.centerDocked,
+    return const Scaffold(
+
+    //  body: GamePlay(keyBar, gameState),
+      body: Home(),
+      // bottomNavigationBar: BottomAppBar(
+      //   shape: const CircularNotchedRectangle(),
+      //   child: Container(
+      //     height: 50.0,
+      //   ),
+      // ),
+      // floatingActionButton: Dice(),
+      // floatingActionButtonLocation: FloatingActionButtonLocation.centerDocked,
     );
   }
 }

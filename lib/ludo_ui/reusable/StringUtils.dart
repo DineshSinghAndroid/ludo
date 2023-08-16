@@ -5,4 +5,5 @@ class StringUtils {
    static String selectCountry = 'Select a country';
    static String selectProfile = "Select Profile Picture";
    static String continueText = "Continue";
+   static String invite = "Invite Friends";
 }

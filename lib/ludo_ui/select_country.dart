@@ -2,6 +2,8 @@ import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:ludo/ludo_ui/reusable/StringUtils.dart';
 import 'package:ludo/ludo_ui/reusable/background-widget.dart';
+import 'package:ludo/ludo_ui/reusable/colors_utils.dart';
+import 'package:ludo/ludo_ui/select_game_type.dart';
 
 class CountrySelect extends StatelessWidget {
   const CountrySelect({Key? key}) : super(key: key);
@@ -17,7 +19,6 @@ class CountrySelect extends StatelessWidget {
       'assets/ludo/6.png',
       'assets/ludo/7.png',
       'assets/ludo/8.png',
-
     ];
 
     return Scaffold(
@@ -35,6 +36,30 @@ class CountrySelect extends StatelessWidget {
                 'assets/ludo/Ludologo.png',
                 height: 100.0,
                 width: 100.0,
+              ),
+              Container(
+                width: 150,
+                margin: const EdgeInsets.all(
+                  10.0,
+                ),
+                padding: EdgeInsets.all(
+                  10.0,
+                ),
+                alignment: Alignment.center,
+                decoration: BoxDecoration(
+                  borderRadius: BorderRadius.circular(
+                    5.0,
+                  ),
+                  color: Colors.white,
+                ),
+                child: const Text(
+                  "Guest123",
+                  style: TextStyle(
+                    fontSize: 18.0,
+                    color: Colors.black,
+                    fontWeight: FontWeight.w800,
+                  ),
+                ),
               ),
               Container(
                 color: Colors.black87,
@@ -113,7 +138,7 @@ class CountrySelect extends StatelessWidget {
                     ),
                     Expanded(
                       child: Container(
-                        color: Colors.black,
+                        color: ColorsUtils.darkBlue,
                         padding: const EdgeInsets.all(10.0),
                         child: GridView.builder(
                           padding: const EdgeInsets.all(0.0),
@@ -125,7 +150,8 @@ class CountrySelect extends StatelessWidget {
                           itemCount: imagePaths.length,
                           itemBuilder: (context, index) {
                             int imageNumber = index + 1;
-                            return Image.asset(imagePaths[index],
+                            return Image.asset(
+                              imagePaths[index],
                               height: 30,
                               width: 30,
                             );
@@ -136,23 +162,33 @@ class CountrySelect extends StatelessWidget {
                   ],
                 ),
               ),
-              Container(
-                height: 50,
-                width: 200,
-                padding: const EdgeInsets.all(8.0),
-                margin: const EdgeInsets.all(8.0),
-                alignment: Alignment.center,
-                decoration: BoxDecoration(
-                  border: Border.all(color: Colors.yellow, width: 2),
-                  color: Colors.green,
-                  borderRadius: BorderRadius.circular(6.0),
-                ),
-                child: Text(
-                  StringUtils.continueText,
-                  style: const TextStyle(
-                    color: Colors.white,
-                    fontWeight: FontWeight.w600,
-                    fontSize: 20,
+              InkWell(
+                onTap: (){
+                  Navigator.pushReplacement(context,
+                      MaterialPageRoute(builder:
+                          (context) =>
+                      const SelectGameType()
+                      )
+                  );
+                },
+                child: Container(
+                  height: 50,
+                  width: 200,
+                  padding: const EdgeInsets.all(8.0),
+                  margin: const EdgeInsets.all(8.0),
+                  alignment: Alignment.center,
+                  decoration: BoxDecoration(
+                    border: Border.all(color: Colors.yellow, width: 2),
+                    color: Colors.green,
+                    borderRadius: BorderRadius.circular(6.0),
+                  ),
+                  child: Text(
+                    StringUtils.continueText,
+                    style: const TextStyle(
+                      color: Colors.white,
+                      fontWeight: FontWeight.w600,
+                      fontSize: 20,
+                    ),
                   ),
                 ),
               ),

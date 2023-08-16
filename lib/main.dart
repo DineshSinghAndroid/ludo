@@ -16,7 +16,7 @@ class MyApp extends StatelessWidget {
       title: 'Flutter Demo',
       theme: ThemeData(
         primarySwatch: Colors.blue,
-      ),
+      ),debugShowCheckedModeBanner: false,
       home: MultiProvider(providers: [
         ChangeNotifierProvider(create: (context) => GameState()),
         ChangeNotifierProvider(create: (context) => DiceModel()),

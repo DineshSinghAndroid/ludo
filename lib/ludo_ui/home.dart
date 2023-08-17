@@ -18,7 +18,7 @@ class _HomeState extends State<Home> {
   void initState() {
     super.initState();
     Timer(const Duration(seconds: 2),
-            ()=>Navigator.pushReplacement(context,
+            ()=>Navigator.push(context,
             MaterialPageRoute(builder:
                 (context) =>
                 const HomeMain()

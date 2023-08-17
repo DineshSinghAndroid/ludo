@@ -164,7 +164,7 @@ class CountrySelect extends StatelessWidget {
               ),
               InkWell(
                 onTap: (){
-                  Navigator.pushReplacement(context,
+                  Navigator.push(context,
                       MaterialPageRoute(builder:
                           (context) =>
                       const SelectGameType()

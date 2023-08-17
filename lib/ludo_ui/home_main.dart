@@ -38,7 +38,7 @@ class HomeMain extends StatelessWidget {
                   const SizedBox(height: 30,),
                   ElevatedButton(
                     onPressed: () {
-                      Navigator.pushReplacement(context,
+                      Navigator.push(context,
                           MaterialPageRoute(builder:
                               (context) =>
                           const CountrySelect()

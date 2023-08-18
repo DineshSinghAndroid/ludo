@@ -4,14 +4,14 @@ import 'colors_utils.dart';
 
 class ReusableEmptyContainer extends StatelessWidget {
   final double? height;
-  final double width;
+  final double? width;
   final Widget? widget;
 
   const ReusableEmptyContainer
 
   ({super.key,
    this.height,
-  required this.width,
+   this.width,
   this.widget,
   });
 

@@ -1,10 +1,9 @@
+/*
 import 'package:flutter/material.dart';
-import 'package:ludo/ludo_ui/play_offline/play_offline_players.dart';
-import 'package:ludo/ludo_ui/reusable/empty_reusable_container.dart';
-import 'package:ludo/ludo_ui/reusable/reusable_container.dart';
 
-class TablePlay extends StatelessWidget {
-  const TablePlay({super.key});
+
+class Settings extends StatelessWidget {
+  const Settings({super.key});
 
   @override
   Widget build(BuildContext context) {
@@ -80,7 +79,7 @@ class TablePlay extends StatelessWidget {
                           shrinkWrap: true,
                           physics: ScrollPhysics(),
                           gridDelegate:
-                              const SliverGridDelegateWithFixedCrossAxisCount(
+                          const SliverGridDelegateWithFixedCrossAxisCount(
                             crossAxisCount: 3,
                           ),
                           itemBuilder: (BuildContext context, int index) {
@@ -94,7 +93,7 @@ class TablePlay extends StatelessWidget {
                               padding: const EdgeInsets.all(8),
                               child: Column(
                                 mainAxisAlignment:
-                                    MainAxisAlignment.spaceBetween,
+                                MainAxisAlignment.spaceBetween,
                                 children: [
                                   Container(
                                     height: 40,
@@ -109,9 +108,9 @@ class TablePlay extends StatelessWidget {
                                       children: [
                                         Row(
                                           mainAxisAlignment:
-                                              MainAxisAlignment.center,
+                                          MainAxisAlignment.center,
                                           crossAxisAlignment:
-                                              CrossAxisAlignment.start,
+                                          CrossAxisAlignment.start,
                                           children: [
                                             Image.asset(
                                               'assets/ludo/coin.png',
@@ -136,7 +135,7 @@ class TablePlay extends StatelessWidget {
                                           decoration: BoxDecoration(
                                             color: Colors.white,
                                             borderRadius:
-                                                BorderRadius.circular(5),
+                                            BorderRadius.circular(5),
                                           ),
                                           child: const Text(
                                             '1,000',
@@ -222,3 +221,4 @@ class TablePlay extends StatelessWidget {
     );
   }
 }
+*/

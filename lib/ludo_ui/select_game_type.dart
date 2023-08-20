@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:ludo/ludo_ui/play_offline/PlayOffline.dart';
-import 'package:ludo/ludo_ui/playerOnline.dart';
+import 'package:ludo/ludo_ui/play_online/playerOnline.dart';
 import 'package:ludo/ludo_ui/reusable/StringUtils.dart';
 import 'package:ludo/ludo_ui/reusable/background-widget.dart';
 import 'package:ludo/ludo_ui/reusable/colors_utils.dart';

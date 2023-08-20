@@ -2,7 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:ludo/ludo_ui/play_offline/play_offline_players.dart';
 import 'package:ludo/ludo_ui/reusable/empty_reusable_container.dart';
 import 'package:ludo/ludo_ui/reusable/reusable_container.dart';
-import 'package:ludo/ludo_ui/table_play.dart';
+import 'package:ludo/ludo_ui/play_online/table_play.dart';
 
 class SelectPlayerOnline extends StatelessWidget {
   const SelectPlayerOnline({super.key});

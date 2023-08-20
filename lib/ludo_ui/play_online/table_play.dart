@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:ludo/ludo_ui/play_offline/play_offline_players.dart';
 import 'package:ludo/ludo_ui/reusable/empty_reusable_container.dart';
 import 'package:ludo/ludo_ui/reusable/reusable_container.dart';
+import 'package:ludo/ludo_ui/settings/settings.dart';
 
 class TablePlay extends StatelessWidget {
   const TablePlay({super.key});
@@ -208,13 +209,13 @@ class TablePlay extends StatelessWidget {
                   InkWell(
                     onTap: () {
                       Navigator.of(context).pop();
-                      // showModalBottomSheet<void>(
-                      //     context: context,
-                      //     isScrollControlled: true,
-                      //     backgroundColor: Colors.black38,
-                      //     builder: (BuildContext context) {
-                      //       return PlayOfflinePlayers();
-                      //     });
+                      showModalBottomSheet<void>(
+                          context: context,
+                          isScrollControlled: true,
+                          backgroundColor: Colors.black38,
+                          builder: (BuildContext context) {
+                            return const Settings();
+                          });
                     },
                     child: const ReusableColoredContainer(
                       width: 80,

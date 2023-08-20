@@ -1,6 +1,7 @@
-/*
 import 'package:flutter/material.dart';
+import 'package:ludo/ludo_ui/myprofile.dart';
 
+import '../reusable/empty_reusable_container.dart';
 
 class Settings extends StatelessWidget {
   const Settings({super.key});
@@ -23,194 +24,490 @@ class Settings extends StatelessWidget {
                 mainAxisAlignment: MainAxisAlignment.center,
                 crossAxisAlignment: CrossAxisAlignment.center,
                 children: [
-                  ReusableEmptyContainer(
-                    //  height: 50,
-                    //  width: 200,
-                    widget: Padding(
-                      padding: const EdgeInsets.all(15.0),
-                      child: Column(
-                        children: [
-                          const Text(
-                            "TABLE PLAY",
+                  Container(
+                    margin: const EdgeInsets.all(15),
+                    padding: const EdgeInsets.all(10),
+                    decoration: const BoxDecoration(
+                      gradient: LinearGradient(
+                        begin: Alignment.centerLeft,
+                        end: Alignment.centerRight,
+                        colors: [
+                          Color(0xFF02249B),
+                          Color(0xFF537ED2),
+                          Color(0xFF02249B),
+                        ],
+                        stops: [0.0172, 0.4912, 1],
+                      ),
+                    ),
+                    child: Column(
+                      children: [
+                        const ReusableEmptyContainer(
+                          widget: Text(
+                            "Settings",
                             style: TextStyle(
                               color: Colors.amber,
                               fontWeight: FontWeight.w600,
-                              fontSize: 18,
+                              fontSize: 20,
                             ),
                           ),
-                          const SizedBox(
-                            height: 15,
-                          ),
-                          Row(
-                            mainAxisAlignment: MainAxisAlignment.spaceAround,
-                            children: [
-                              Image.asset(
-                                "assets/ludo/bluepoint.png",
-                                height: 20,
-                                width: 20,
-                              ),
-                              Image.asset(
-                                "assets/ludo/redpoint.png",
-                                height: 20,
-                                width: 20,
-                              ),
-                              Image.asset(
-                                "assets/ludo/greenpoint.png",
-                                height: 20,
-                                width: 20,
-                              ),
-                              Image.asset(
-                                "assets/ludo/yellowpoint.png",
-                                height: 20,
-                                width: 20,
-                              ),
-                            ],
-                          )
-                        ],
-                      ),
-                    ),
-                  ),
-                  ReusableEmptyContainer(
-                    widget: SingleChildScrollView(
-                      child: Container(
-                        child: GridView.builder(
-                          scrollDirection: Axis.vertical,
-                          itemCount: 5,
-                          shrinkWrap: true,
-                          physics: ScrollPhysics(),
-                          gridDelegate:
-                          const SliverGridDelegateWithFixedCrossAxisCount(
-                            crossAxisCount: 3,
-                          ),
-                          itemBuilder: (BuildContext context, int index) {
-                            return Container(
-                              height: 90,
-                              width: 90,
-                              decoration: BoxDecoration(
-                                color: Colors.yellow,
-                                borderRadius: BorderRadius.circular(15),
-                              ),
-                              padding: const EdgeInsets.all(8),
-                              child: Column(
-                                mainAxisAlignment:
-                                MainAxisAlignment.spaceBetween,
-                                children: [
-                                  Container(
-                                    height: 40,
-                                    decoration: const BoxDecoration(
-                                      color: Colors.green,
-                                      borderRadius: BorderRadius.only(
-                                        topLeft: Radius.circular(8),
-                                        topRight: Radius.circular(8),
-                                      ),
+                          radius: 0.0,
+                          width: 100,
+                          isBorder: false,
+                        ),
+                        ClipRRect(
+                          child: Container(
+                            height: 50,
+                            decoration: const BoxDecoration(
+                              color: Color(0xFF02249B),
+                            ),
+                            child: Container(
+                              decoration: const BoxDecoration(
+                                boxShadow: [
+                                  BoxShadow(
+                                    offset: Offset(
+                                      0,
+                                      -50,
                                     ),
-                                    child: Column(
-                                      children: [
-                                        Row(
-                                          mainAxisAlignment:
-                                          MainAxisAlignment.center,
-                                          crossAxisAlignment:
-                                          CrossAxisAlignment.start,
-                                          children: [
-                                            Image.asset(
-                                              'assets/ludo/coin.png',
-                                              // Replace with your image path
-                                              height: 15,
-                                              width: 15,
-                                            ),
-                                            const Text(
-                                              'WIN',
-                                              style: TextStyle(
-                                                color: Colors.white,
-                                                fontSize: 12,
-                                                fontWeight: FontWeight.bold,
-                                              ),
-                                            ),
-                                          ],
-                                        ),
-                                        const SizedBox(height: 5),
-                                        Container(
-                                          //  height: 8,
-                                          width: 50,
-                                          decoration: BoxDecoration(
-                                            color: Colors.white,
-                                            borderRadius:
-                                            BorderRadius.circular(5),
-                                          ),
-                                          child: const Text(
-                                            '1,000',
-                                            textAlign: TextAlign.center,
-                                            style: TextStyle(
-                                              color: Colors.black,
-                                              fontSize: 15,
-                                              fontWeight: FontWeight.bold,
-                                            ),
-                                          ),
-                                        ),
-                                      ],
+                                    blurRadius: 8,
+                                    color: Color(0xFF000000),
+                                  ),
+                                ],
+                              ),
+                              child: Row(
+                                mainAxisAlignment:
+                                    MainAxisAlignment.spaceBetween,
+                                children: [
+                                  const Text(
+                                    "Audio",
+                                    style: TextStyle(
+                                      color: Colors.amber,
+                                      fontWeight: FontWeight.w600,
+                                      fontSize: 15,
                                     ),
                                   ),
-                                  const Text(
-                                    '1000',
+                                  Row(
+                                    mainAxisAlignment: MainAxisAlignment.end,
+                                    children: [
+                                      ReusableEmptyContainer(
+                                        height: 30,
+                                        width: 40,
+                                        margin: 2,
+                                        widget: Image.asset(
+                                          "assets/ludo/speaker.png",
+                                          height: 25,
+                                          width: 20,
+                                        ),
+                                      ),
+                                      ReusableEmptyContainer(
+                                        height: 30,
+                                        width: 40,
+                                        margin: 2,
+                                        widget: Image.asset(
+                                          "assets/ludo/music.png",
+                                          height: 25,
+                                          width: 20,
+                                        ),
+                                      ),
+                                    ],
+                                  ),
+                                ],
+                              ),
+                            ),
+                          ),
+                        ),
+                        ClipRRect(
+                          child: Container(
+                            height: 50,
+                            decoration: const BoxDecoration(
+                              color: Color(0xFF02249B),
+                            ),
+                            child: Container(
+                              decoration: const BoxDecoration(
+                                boxShadow: [
+                                  BoxShadow(
+                                    offset: Offset(
+                                      0,
+                                      -50,
+                                    ),
+                                    blurRadius: 8,
+                                    color: Color(0xFF000000),
+                                  ),
+                                ],
+                              ),
+                              child: const Row(
+                                mainAxisAlignment:
+                                    MainAxisAlignment.spaceBetween,
+                                children: [
+                                  Text(
+                                    "Game Rules",
                                     style: TextStyle(
-                                      color: Colors.black,
-                                      fontSize: 18,
-                                      fontWeight: FontWeight.bold,
+                                      color: Colors.amber,
+                                      fontWeight: FontWeight.w600,
+                                      fontSize: 15,
+                                    ),
+                                  ),
+                                  ReusableEmptyContainer(
+                                    height: 30,
+                                    width: 80,
+                                    radius: 15,
+                                    margin: 2,
+                                    widget: Text(
+                                      "Read",
+                                      style: TextStyle(
+                                        color: Colors.amber,
+                                        fontWeight: FontWeight.w600,
+                                        fontSize: 14,
+                                      ),
                                     ),
                                   ),
                                 ],
                               ),
-                            );
-                          },
+                            ),
+                          ),
                         ),
-                      ),
+                        ClipRRect(
+                          child: Container(
+                            height: 50,
+                            decoration: const BoxDecoration(
+                              color: Color(0xFF02249B),
+                            ),
+                            child: Container(
+                              decoration: const BoxDecoration(
+                                boxShadow: [
+                                  BoxShadow(
+                                    offset: Offset(
+                                      0,
+                                      -50,
+                                    ),
+                                    blurRadius: 8,
+                                    color: Color(0xFF000000),
+                                  ),
+                                ],
+                              ),
+                              child: const Row(
+                                mainAxisAlignment:
+                                    MainAxisAlignment.spaceBetween,
+                                children: [
+                                  Text(
+                                    "Privacy Policy",
+                                    style: TextStyle(
+                                      color: Colors.amber,
+                                      fontWeight: FontWeight.w600,
+                                      fontSize: 15,
+                                    ),
+                                  ),
+                                  ReusableEmptyContainer(
+                                    height: 30,
+                                    width: 80,
+                                    radius: 15,
+                                    margin: 2,
+                                    widget: Text(
+                                      "View",
+                                      style: TextStyle(
+                                        color: Colors.amber,
+                                        fontWeight: FontWeight.w600,
+                                        fontSize: 14,
+                                      ),
+                                    ),
+                                  ),
+                                ],
+                              ),
+                            ),
+                          ),
+                        ),
+                        ClipRRect(
+                          child: Container(
+                            height: 50,
+                            decoration: const BoxDecoration(
+                              color: Color(0xFF02249B),
+                            ),
+                            child: Container(
+                              decoration: const BoxDecoration(
+                                boxShadow: [
+                                  BoxShadow(
+                                    offset: Offset(
+                                      0,
+                                      -50,
+                                    ),
+                                    blurRadius: 8,
+                                    color: Color(0xFF000000),
+                                  ),
+                                ],
+                              ),
+                              child: const Row(
+                                mainAxisAlignment:
+                                    MainAxisAlignment.spaceBetween,
+                                children: [
+                                  Text(
+                                    "Notification",
+                                    style: TextStyle(
+                                      color: Colors.amber,
+                                      fontWeight: FontWeight.w600,
+                                      fontSize: 15,
+                                    ),
+                                  ),
+                                  ReusableEmptyContainer(
+                                    height: 30,
+                                    width: 80,
+                                    radius: 15,
+                                    margin: 2,
+                                    widget: Text(
+                                      "Edit",
+                                      style: TextStyle(
+                                        color: Colors.amber,
+                                        fontWeight: FontWeight.w600,
+                                        fontSize: 14,
+                                      ),
+                                    ),
+                                  ),
+                                ],
+                              ),
+                            ),
+                          ),
+                        ),
+                        ClipRRect(
+                          child: Container(
+                            height: 50,
+                            decoration: const BoxDecoration(
+                              color: Color(0xFF02249B),
+                            ),
+                            child: Container(
+                              decoration: const BoxDecoration(
+                                boxShadow: [
+                                  BoxShadow(
+                                    offset: Offset(
+                                      0,
+                                      -50,
+                                    ),
+                                    blurRadius: 8,
+                                    color: Color(0xFF000000),
+                                  ),
+                                ],
+                              ),
+                              child: const Row(
+                                mainAxisAlignment:
+                                    MainAxisAlignment.spaceBetween,
+                                children: [
+                                  Text(
+                                    "Request Account Deletion",
+                                    style: TextStyle(
+                                      color: Colors.amber,
+                                      fontWeight: FontWeight.w600,
+                                      fontSize: 15,
+                                    ),
+                                  ),
+                                  ReusableEmptyContainer(
+                                    height: 30,
+                                    width: 80,
+                                    radius: 15,
+                                    margin: 2,
+                                    widget: Text(
+                                      "Delete",
+                                      style: TextStyle(
+                                        color: Colors.amber,
+                                        fontWeight: FontWeight.w600,
+                                        fontSize: 14,
+                                      ),
+                                    ),
+                                  ),
+                                ],
+                              ),
+                            ),
+                          ),
+                        ),
+                        ClipRRect(
+                          child: Container(
+                            height: 50,
+                            decoration: const BoxDecoration(
+                              color: Color(0xFF02249B),
+                            ),
+                            child: Container(
+                              decoration: const BoxDecoration(
+                                boxShadow: [
+                                  BoxShadow(
+                                    offset: Offset(
+                                      0,
+                                      -50,
+                                    ),
+                                    blurRadius: 8,
+                                    color: Color(0xFF000000),
+                                  ),
+                                ],
+                              ),
+                              child: const Row(
+                                mainAxisAlignment:
+                                    MainAxisAlignment.spaceBetween,
+                                children: [
+                                  Text(
+                                    "Support",
+                                    style: TextStyle(
+                                      color: Colors.amber,
+                                      fontWeight: FontWeight.w600,
+                                      fontSize: 15,
+                                    ),
+                                  ),
+                                  ReusableEmptyContainer(
+                                    height: 30,
+                                    width: 80,
+                                    radius: 15,
+                                    margin: 2,
+                                    widget: Text(
+                                      "FAQ",
+                                      style: TextStyle(
+                                        color: Colors.amber,
+                                        fontWeight: FontWeight.w600,
+                                        fontSize: 14,
+                                      ),
+                                    ),
+                                  ),
+                                ],
+                              ),
+                            ),
+                          ),
+                        ),
+                        ClipRRect(
+                          child: Container(
+                            height: 50,
+                            decoration: const BoxDecoration(
+                              color: Color(0xFF02249B),
+                            ),
+                            child: Container(
+                              decoration: const BoxDecoration(
+                                boxShadow: [
+                                  BoxShadow(
+                                    offset: Offset(
+                                      0,
+                                      -50,
+                                    ),
+                                    blurRadius: 8,
+                                    color: Color(0xFF000000),
+                                  ),
+                                ],
+                              ),
+                              child: const Row(
+                                mainAxisAlignment:
+                                    MainAxisAlignment.spaceBetween,
+                                children: [
+                                  Text(
+                                    "Version",
+                                    style: TextStyle(
+                                      color: Colors.amber,
+                                      fontWeight: FontWeight.w600,
+                                      fontSize: 15,
+                                    ),
+                                  ),
+                                  Text(
+                                    "0.0.0.0",
+                                    style: TextStyle(
+                                      color: Colors.amber,
+                                      fontWeight: FontWeight.w600,
+                                      fontSize: 14,
+                                    ),
+                                  ),
+                                ],
+                              ),
+                            ),
+                          ),
+                        ),
+                        Padding(
+                          padding: const EdgeInsets.all(8.0),
+                          child: Row(
+                            mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                            children: [
+                              ReusableEmptyContainer(
+                                height: 30,
+                                //  width: 80,
+                                radius: 8,
+                                margin: 2,
+                                widget: Row(
+                                  children: [
+                                    Image.asset("assets/ludo/games.png"),
+                                    const SizedBox(
+                                      width: 5,
+                                    ),
+                                    const Text(
+                                      "Sign Out",
+                                      style: TextStyle(
+                                        color: Colors.white,
+                                        fontWeight: FontWeight.w600,
+                                        fontSize: 14,
+                                      ),
+                                    ),
+                                  ],
+                                ),
+                              ),
+                              ReusableEmptyContainer(
+                                  height: 30,
+                                  //   width: 80,
+                                  radius: 8,
+                                  margin: 2,
+                                  widget:
+                                      Image.asset("assets/ludo/facebook.png")),
+                              const ReusableEmptyContainer(
+                                height: 30,
+                                //   width: 80,
+                                radius: 8,
+                                margin: 2,
+                                widget: Row(
+                                  crossAxisAlignment: CrossAxisAlignment.center,
+                                  children: [
+                                    Icon(
+                                      Icons.add,
+                                      color: Colors.amber,
+                                      size: 15,
+                                    ),
+                                    Text(
+                                      "More Games",
+                                      style: TextStyle(
+                                        color: Colors.white,
+                                        fontWeight: FontWeight.w600,
+                                        fontSize: 14,
+                                      ),
+                                    ),
+                                  ],
+                                ),
+                              ),
+                            ],
+                          ),
+                        ),
+                      ],
                     ),
                   ),
-                ],
-              ),
-            ),
-            // const SizedBox(
-            //   height: 50,
-            // ),
-            Padding(
-              padding: const EdgeInsets.symmetric(horizontal: 20.0),
-              child: Row(
-                mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                children: [
-                  InkWell(
-                    onTap: () {
-                      Navigator.of(context).pop();
-                    },
-                    child: ReusableEmptyContainer(
-                      height: 30,
-                      width: 50,
-                      widget: Image.asset(
-                        "assets/ludo/backicon.png",
-                        height: 25,
-                        width: 20,
-                      ),
+                  Container(
+                    height: 100,
+                    margin: const EdgeInsets.all(5),
+                    child: Row(
+                      mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                      children: [
+                        Image.asset(
+                          "assets/ludo/Rate.png",
+                          height: 50,
+                          width: 50,
+                        ),
+                        InkWell(
+                          onTap: () {
+                            Navigator.of(context).pop();
+                            showModalBottomSheet<void>(
+                                context: context,
+                                isScrollControlled: true,
+                                backgroundColor: Colors.black38,
+                                builder: (BuildContext context) {
+                                  return const MyProfile();
+                                });
+                          },
+                          child: Image.asset(
+                            "assets/ludo/Back.png",
+                            height: 50,
+                            width: 50,
+                          ),
+                        ),
+                        Image.asset(
+                          "assets/ludo/Share.png",
+                          height: 50,
+                          width: 50,
+                        ),
+                      ],
                     ),
-                  ),
-                  InkWell(
-                    onTap: () {
-                      Navigator.of(context).pop();
-                      // showModalBottomSheet<void>(
-                      //     context: context,
-                      //     isScrollControlled: true,
-                      //     backgroundColor: Colors.black38,
-                      //     builder: (BuildContext context) {
-                      //       return PlayOfflinePlayers();
-                      //     });
-                    },
-                    child: const ReusableColoredContainer(
-                      width: 80,
-                      height: 40,
-                      text: "NEXT",
-                      font_Size: 18,
-                    ),
-                  ),
-                  const SizedBox(
-                    width: 50,
                   )
                 ],
               ),
@@ -221,4 +518,3 @@ class Settings extends StatelessWidget {
     );
   }
 }
-*/

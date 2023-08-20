@@ -1,11 +1,12 @@
 import 'package:flutter/material.dart';
 
-import 'colors_utils.dart';
-
 class ReusableEmptyContainer extends StatelessWidget {
   final double? height;
   final double? width;
   final Widget? widget;
+  final double? radius;
+  final double? margin;
+  final bool? isBorder;
 
   const ReusableEmptyContainer
 
@@ -13,6 +14,9 @@ class ReusableEmptyContainer extends StatelessWidget {
    this.height,
    this.width,
   this.widget,
+  this.radius,
+  this.margin,
+  this.isBorder = true
   });
 
   @override
@@ -21,10 +25,10 @@ class ReusableEmptyContainer extends StatelessWidget {
       height: height,
       width: width,
       padding: const EdgeInsets.all(5.0),
-      margin: const EdgeInsets.all(8.0),
+      margin:  EdgeInsets.all(margin == null ? 8.0 : margin! ),
       alignment: Alignment.center,
       decoration: BoxDecoration(
-        border: Border.all(color: Colors.yellow, width: 2),
+        border: isBorder ==  true ? Border.all(color: Colors.amber, width: 2): null,
         gradient: const RadialGradient(
           colors: [
             Color(0xFF4285F4),
@@ -33,7 +37,7 @@ class ReusableEmptyContainer extends StatelessWidget {
             Color(0xFF001665),
           ],
         ),
-        borderRadius: BorderRadius.circular(10.0),
+        borderRadius:  BorderRadius.circular( radius == null ?  10.0 :  radius!) ,
       ),
       child
       :widget,

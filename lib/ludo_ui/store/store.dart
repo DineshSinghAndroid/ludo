@@ -4,8 +4,8 @@ import 'package:ludo/ludo_ui/reusable/empty_reusable_container.dart';
 import 'package:ludo/ludo_ui/reusable/reusable_container.dart';
 import 'package:ludo/ludo_ui/settings/settings.dart';
 
-class TablePlay extends StatelessWidget {
-  const TablePlay({super.key});
+class Store extends StatelessWidget {
+  const Store({super.key});
 
   @override
   Widget build(BuildContext context) {
@@ -28,50 +28,19 @@ class TablePlay extends StatelessWidget {
                   ReusableEmptyContainer(
                     widget: Column(
                       children: [
-                        ReusableEmptyContainer(
-                          //  height: 50,
-                          //  width: 200,
+                        const ReusableEmptyContainer(
                           widget: Padding(
-                            padding: const EdgeInsets.all(15.0),
+                            padding: EdgeInsets.all(5.0),
                             child: Column(
                               children: [
-                                const Text(
-                                  "TABLE PLAY",
+                                Text(
+                                  "STORE",
                                   style: TextStyle(
                                     color: Colors.amber,
                                     fontWeight: FontWeight.w600,
                                     fontSize: 18,
                                   ),
                                 ),
-                                const SizedBox(
-                                  height: 15,
-                                ),
-                                Row(
-                                  mainAxisAlignment:
-                                      MainAxisAlignment.spaceAround,
-                                  children: [
-                                    Image.asset(
-                                      "assets/ludo/bluepoint.png",
-                                      height: 20,
-                                      width: 20,
-                                    ),
-                                    Image.asset(
-                                      "assets/ludo/redpoint.png",
-                                      height: 20,
-                                      width: 20,
-                                    ),
-                                    Image.asset(
-                                      "assets/ludo/greenpoint.png",
-                                      height: 20,
-                                      width: 20,
-                                    ),
-                                    Image.asset(
-                                      "assets/ludo/yellowpoint.png",
-                                      height: 20,
-                                      width: 20,
-                                    ),
-                                  ],
-                                )
                               ],
                             ),
                           ),
@@ -86,24 +55,24 @@ class TablePlay extends StatelessWidget {
                                 shrinkWrap: true,
                                 physics: const ScrollPhysics(),
                                 gridDelegate:
-                                    const SliverGridDelegateWithFixedCrossAxisCount(
-                                  crossAxisCount: 3,
-                                      mainAxisSpacing: 25,
-                                      crossAxisSpacing: 20,
+                                const SliverGridDelegateWithFixedCrossAxisCount(
+                                  crossAxisCount: 2,
+                                  mainAxisSpacing: 45,
+                                  crossAxisSpacing: 35,
                                 ),
                                 itemBuilder: (BuildContext context, int index) {
                                   return Container(
                                     height: 90,
                                     width: 90,
                                     decoration: BoxDecoration(
-                                      color: Colors.yellow,
+                                      color: Colors.blueAccent,
                                       borderRadius: BorderRadius.circular(10,),
                                     ),
                                     padding: const EdgeInsets.all(8),
                                     child: FittedBox(
                                       child: Column(
                                         mainAxisAlignment:
-                                            MainAxisAlignment.spaceBetween,
+                                        MainAxisAlignment.spaceBetween,
                                         children: [
                                           Container(
                                             height: 40,
@@ -118,9 +87,9 @@ class TablePlay extends StatelessWidget {
                                               children: [
                                                 Row(
                                                   mainAxisAlignment:
-                                                      MainAxisAlignment.center,
+                                                  MainAxisAlignment.center,
                                                   crossAxisAlignment:
-                                                      CrossAxisAlignment.start,
+                                                  CrossAxisAlignment.start,
                                                   children: [
                                                     Image.asset(
                                                       'assets/ludo/coin.png',
@@ -134,7 +103,7 @@ class TablePlay extends StatelessWidget {
                                                         color: Colors.white,
                                                         fontSize: 12,
                                                         fontWeight:
-                                                            FontWeight.bold,
+                                                        FontWeight.bold,
                                                       ),
                                                     ),
                                                   ],
@@ -146,7 +115,7 @@ class TablePlay extends StatelessWidget {
                                                   decoration: BoxDecoration(
                                                     color: const Color(0xFF204B22),
                                                     borderRadius:
-                                                        BorderRadius.circular(5),
+                                                    BorderRadius.circular(5),
                                                   ),
                                                   child: const Text(
                                                     '1,000',
@@ -164,7 +133,7 @@ class TablePlay extends StatelessWidget {
                                           const Text(
                                             '1000',
                                             style: TextStyle(
-                                              color: Colors.black,
+                                              color: Colors.white,
                                               fontSize: 18,
                                               fontWeight: FontWeight.bold,
                                             ),
@@ -187,47 +156,23 @@ class TablePlay extends StatelessWidget {
             // const SizedBox(
             //   height: 50,
             // ),
-            Padding(
-              padding: const EdgeInsets.symmetric(horizontal: 20.0),
-              child: Row(
-                mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                children: [
-                  InkWell(
-                    onTap: () {
-                      Navigator.of(context).pop();
-                    },
-                    child: ReusableEmptyContainer(
-                      height: 30,
-                      width: 50,
-                      widget: Image.asset(
-                        "assets/ludo/backicon.png",
-                        height: 25,
-                        width: 20,
-                      ),
-                    ),
-                  ),
-                  InkWell(
-                    onTap: () {
-                      Navigator.of(context).pop();
-                      showModalBottomSheet<void>(
-                          context: context,
-                          isScrollControlled: true,
-                          backgroundColor: Colors.black38,
-                          builder: (BuildContext context) {
-                            return const Settings();
-                          });
-                    },
-                    child: const ReusableColoredContainer(
-                      width: 80,
-                      height: 40,
-                      text: "PLAY",
-                      font_Size: 18,
-                    ),
-                  ),
-                  const SizedBox(
+            Center(
+              child: Padding(
+                padding: const EdgeInsets.symmetric(horizontal: 20.0),
+                child: InkWell(
+                  onTap: () {
+                    Navigator.of(context).pop();
+                  },
+                  child: ReusableEmptyContainer(
+                    height: 30,
                     width: 50,
-                  )
-                ],
+                    widget: Image.asset(
+                      "assets/ludo/backicon.png",
+                      height: 25,
+                      width: 20,
+                    ),
+                  ),
+                ),
               ),
             ),
           ],

@@ -1,10 +1,15 @@
 import 'package:flutter/material.dart';
+import 'package:ludo/ludo_ui/computer/computer.dart';
+import 'package:ludo/ludo_ui/leaderboard/leaderboard.dart';
 import 'package:ludo/ludo_ui/play_offline/PlayOffline.dart';
 import 'package:ludo/ludo_ui/play_online/playerOnline.dart';
+import 'package:ludo/ludo_ui/play_online/table_play.dart';
 import 'package:ludo/ludo_ui/reusable/StringUtils.dart';
 import 'package:ludo/ludo_ui/reusable/background-widget.dart';
 import 'package:ludo/ludo_ui/reusable/colors_utils.dart';
 import 'package:ludo/ludo_ui/reusable/custom_progress.dart';
+import 'package:ludo/ludo_ui/store/store.dart';
+import 'package:ludo/ludo_ui/wallet/wallet.dart';
 
 class SelectGameType extends StatelessWidget {
   const SelectGameType({Key? key}) : super(key: key);
@@ -240,20 +245,41 @@ class SelectGameType extends StatelessWidget {
                       Row(
                         mainAxisAlignment: MainAxisAlignment.center,
                         children: [
-                          Padding(
-                            padding: const EdgeInsets.all(8.0),
-                            child: Image.asset(
-                              "assets/ludo/Computer.png",
-                              height: 100,
-                              width: 100,
+                          InkWell(
+                            onTap: (){
+                              showModalBottomSheet<void>(
+                                  context: context,
+                                  isScrollControlled: true,backgroundColor: Colors.black38,
+                                  builder: (BuildContext context) {
+                                    return const Computer();
+                                  });
+                            },
+                            child: Padding(
+                              padding: const EdgeInsets.all(8.0),
+                              child: Image.asset(
+                                "assets/ludo/Computer.png",
+                                height: 100,
+                                width: 100,
+                              ),
                             ),
                           ),
-                          Padding(
-                            padding: const EdgeInsets.all(8.0),
-                            child: Image.asset(
-                              "assets/ludo/Tournament.png",
-                              height: 100,
-                              width: 100,
+                          InkWell(
+                            onTap: (){
+                              showModalBottomSheet<void>(
+                                  context: context,
+                                  isScrollControlled: true,
+                                  backgroundColor: Colors.black38,
+                                  builder: (BuildContext context) {
+                                    return const TablePlay();
+                                  });
+                            },
+                            child: Padding(
+                              padding: const EdgeInsets.all(8.0),
+                              child: Image.asset(
+                                "assets/ludo/Tournament.png",
+                                height: 100,
+                                width: 100,
+                              ),
                             ),
                           ),
                         ],
@@ -294,26 +320,60 @@ class SelectGameType extends StatelessWidget {
                   child: Row(
                     mainAxisAlignment: MainAxisAlignment.spaceBetween,
                     children: [
-                      Padding(
-                        padding: const EdgeInsets.only(bottom:10.0),
-                        child: Image.asset(
-                          "assets/ludo/Wallet.png",
-                          height: 50,
-                          width: 50,
+                      InkWell(
+                        onTap: (){
+                          showModalBottomSheet<void>(
+                              context: context,
+                              isScrollControlled: true,
+                              backgroundColor: Colors.black38,
+                              builder: (BuildContext context) {
+                                return const Wallet();
+                              });
+                        },
+                        child: Padding(
+                          padding: const EdgeInsets.only(bottom:10.0),
+                          child: Image.asset(
+                            "assets/ludo/Wallet.png",
+                            height: 50,
+                            width: 50,
+                          ),
                         ),
-                      ), Padding(
-                        padding: const EdgeInsets.only(top:40.0),
-                        child: Image.asset(
-                          "assets/ludo/Leaderboard.png",
-                          height: 50,
-                          width: 50,
+                      ), InkWell(
+                        onTap: (){
+                          showModalBottomSheet<void>(
+                              context: context,
+                              isScrollControlled: true,
+                              backgroundColor: Colors.black38,
+                              builder: (BuildContext context) {
+                                return const LeaderBoard();
+                              });
+                        },
+                        child: Padding(
+                          padding: const EdgeInsets.only(top:40.0),
+                          child: Image.asset(
+                            "assets/ludo/Leaderboard.png",
+                            height: 50,
+                            width: 50,
+                          ),
                         ),
-                      ), Padding(
-                        padding: const EdgeInsets.only(bottom:10.0),
-                        child: Image.asset(
-                          "assets/ludo/Store.png",
-                          height: 50,
-                          width: 50,
+                      ), InkWell(
+                        onTap: (){
+                          Navigator.of(context).pop();
+                          showModalBottomSheet<void>(
+                              context: context,
+                              isScrollControlled: true,
+                              backgroundColor: Colors.black38,
+                              builder: (BuildContext context) {
+                                return const Store();
+                              });
+                        },
+                        child: Padding(
+                          padding: const EdgeInsets.only(bottom:10.0),
+                          child: Image.asset(
+                            "assets/ludo/Store.png",
+                            height: 50,
+                            width: 50,
+                          ),
                         ),
                       ),
                     ],

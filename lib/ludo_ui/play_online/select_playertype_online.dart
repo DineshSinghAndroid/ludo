@@ -299,13 +299,6 @@ class SelectPlayerOnline extends StatelessWidget {
                   InkWell(
                     onTap: () {
                       Navigator.of(context).pop();
-                      showModalBottomSheet<void>(
-                          context: context,
-                          isScrollControlled: true,
-                          backgroundColor: Colors.black38,
-                          builder: (BuildContext context) {
-                            return TablePlay();
-                          });
                     },
                     child: const ReusableColoredContainer(
                       width: 80,

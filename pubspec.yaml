@@ -39,6 +39,8 @@ dependencies:
   equatable:
   flutter_svg: ^2.0.7
   http: ^1.1.0
+  just_audio:
+  simple_ripple_animation:
 
 dev_dependencies:
   flutter_test:
@@ -66,6 +68,10 @@ flutter:
   assets:
     - assets/
     - assets/ludo/
+    - assets/images/
+    - assets/images/dice/
+    - assets/images/crown/
+    - assets/sounds/
 
   # An image asset can refer to one or more resolution-specific "variants", see
   # https://flutter.dev/assets-and-images/#resolution-aware

@@ -1,10 +1,6 @@
 import 'package:flutter/material.dart';
-import './gameengine/model/game_state.dart';
-import './widgets/gameplay.dart';
-import 'package:provider/provider.dart';
-import './widgets/dice.dart';
-import './gameengine/model/dice_model.dart';
-import 'ludo_ui/home.dart';
+ import 'package:provider/provider.dart';
+  import 'ludo_ui/home.dart';
 
 void main() => runApp(MyApp());
 
@@ -17,10 +13,7 @@ class MyApp extends StatelessWidget {
       theme: ThemeData(
         primarySwatch: Colors.blue,
       ),debugShowCheckedModeBanner: false,
-      home: MultiProvider(providers: [
-        ChangeNotifierProvider(create: (context) => GameState()),
-        ChangeNotifierProvider(create: (context) => DiceModel()),
-      ], child: MyHomePage(title: 'Flutter Demo Home Page')),
+      home:  MyHomePage(title: 'Flutter Demo Home Page'),
     );
   }
 }
@@ -37,8 +30,7 @@ class _MyHomePageState extends State<MyHomePage> {
   void _onPressed() {}
   @override
   Widget build(BuildContext context) {
-    final gameState = Provider.of<GameState>(context);
-    return const Scaffold(
+     return const Scaffold(
 
     //  body: GamePlay(keyBar, gameState),
       body: Home(),

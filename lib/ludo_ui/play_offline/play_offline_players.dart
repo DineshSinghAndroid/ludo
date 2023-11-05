@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:ludo/ludo_ui/reusable/colors_utils.dart';
 
+import '../../boardUI/main_screen.dart';
 import '../reusable/empty_reusable_container.dart';
 import '../reusable/reusable_container.dart';
 
@@ -288,11 +289,17 @@ class PlayOfflinePlayers extends StatelessWidget {
                     ),
                   ),
                 ),
-                const ReusableColoredContainer(
-                  width: 80,
-                  height: 40,
-                  text: "PLAY",
-                  font_Size: 18,
+                InkWell(
+                  onTap: (){
+                    Navigator.push(context, MaterialPageRoute(builder: (context) => MainScreen(),))
+                    ;
+                  },
+                  child: const ReusableColoredContainer(
+                    width: 80,
+                    height: 40,
+                    text: "PLAY",
+                    font_Size: 18,
+                  ),
                 ),
                 const SizedBox(
                   width: 20,
